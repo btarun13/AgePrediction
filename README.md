@@ -13,3 +13,5 @@ The model performance is:
 ## Performance plots
 ![MAE Age](plots/age.png)
 ![MAE Age](plots/gender.png)
+
+model source: https://github.com/sajjjadayobi/FaceLib
