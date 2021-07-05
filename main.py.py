@@ -66,7 +66,7 @@ class TrainModel:
             time_elapsed = time.time() - t0
             print('  Training complete in: %.0fm %.0fs' % (time_elapsed // 60, time_elapsed % 60))
             print('| val_acc_gender | val_l1_loss | acc_gender | l1_loss |')
-            print('| %.3f          | %.3f       | %.3f      | %.3f    | \n' % (valid_acc[0], valid_acc[1], train_acc[0], train_acc[1]))
+            print('| %.3f          | %.3f       | %.3f      | %.3f   | \n' % (valid_acc[0], valid_acc[1], train_acc[0], train_acc[1]))
 
  
             
@@ -230,7 +230,7 @@ if __name__ == '__main__':
     model = ShuffleneFull().cuda()
     optimizer = optim.Adam(params=model.parameters(), lr=0.001, weight_decay=0.001)
     scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.9)
-    history = TrainModel(model, train_dl, valid_dl, optimizer, multitask_loss, scheduler, 3)
+    history = TrainModel(model, train_dl, valid_dl, optimizer, multitask_loss, scheduler, 100)
     
     res = np.array([val_acc_gen, val_mae_age, train_acc_gen, train_mae_age]).T
     get_plots(res)
