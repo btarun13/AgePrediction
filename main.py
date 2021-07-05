@@ -221,8 +221,8 @@ valid_data = data[data[:, -1] == "0"]
 valid_ds = MultitaskDataset(data=valid_data, tfms=tf['test'])
 train_ds = MultitaskDataset(data=train_data, tfms=tf['train'])
 
-train_dl = DataLoader(train_ds, batch_size=bs, shuffle=True, num_workers=1)
-valid_dl = DataLoader(valid_ds, batch_size=bs, shuffle=True, num_workers=1)
+train_dl = DataLoader(train_ds, batch_size=bs, shuffle=True, num_workers=5)
+valid_dl = DataLoader(valid_ds, batch_size=bs, shuffle=True, num_workers=2)
 
 
 
